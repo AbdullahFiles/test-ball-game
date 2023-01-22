@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<!--<html manifest="offline.appcache">-->
+<html>
+
+<!-- Mirrored from game4.baifumeiba.com/minigame/ydygdy/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 10:11:55 GMT -->
+<head>
+    <meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>MidNight Game</title>
+	
+	<!-- Standardised web app manifest -->
+	<!--<link rel="manifest" href="app.manifest" />-->
+	
+	<!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="apple-touch-icon" sizes="256x256" href="icon-256.png" />
+	<meta name="HandheldFriendly" content="true" />
+	
+	<!-- Chrome for Android web app tags -->
+	<meta name="mobile-web-app-capable" content="yes" />
+	<link rel="shortcut icon" sizes="256x256" href="icon-256.png" />
+
+    <!-- All margins and padding must be zero for the canvas to fill the screen. -->
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		html, body {
+			background: #000;
+			color: #fff;
+			overflow: hidden;
+			touch-action: none;
+			-ms-touch-action: none;
+		}
+		canvas {
+			touch-action-delay: none;
+			touch-action: none;
+			-ms-touch-action: none;
+		}
+		#cover{display:none;position:absolute;left:0;top:0;z-index:18888;background-color:#000000;opacity:0.7;}
+		#guide{display:none;position:absolute;right:18px;top:5px;z-index:19999;}
+		#guide img{width:260px;height:180px;}
+		</style>
+	<script type="text/javascript" src="play_sdk.js"></script>
+<script language="javascript" type="text/javascript" src="js/play68.js"></script>
+ <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "../../../hm.baidu.com/hm7949.js?5019ab270a11b6476124163508fbf896";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head> 
+ 
+<body> 
+	<div style="display:none;">
+ 		<img src="logo.jpg" />
+	</div>
+
+	<div id="fb-root"></div>
+	
+	<script>
+	// Issue a warning if trying to preview an exported project on disk.
+	(function(){
+		// Check for running exported on file protocol
+		if (window.location.protocol.substr(0, 4) === "file")
+		{
+			alert("Exported games won't work until you upload them. (When running on the file:/// protocol, browsers block many features from working for security reasons.)");
+		}
+	})();
+	</script>
+	<!--<div id="focus" style="text-align:center;top:35%; position:absolute; display:none">-->
+		<!--<font size="30px" color="#000000"><a href="http://mp.weixin.qq.com/s?__biz=MzAxMjM0NTQ1Ng==&mid=205575255&idx=1&sn=403bc47901154183b851e7fe84f67691#rd">من فضلك اتبعني قبل الدخول في اللعبة</a></font>-->
+	<!--</div>-->
+	<!-- The canvas must be inside a div called c2canvasdiv -->
+	<div id="c2canvasdiv">
+		<!-- The canvas the project will render to.  If you change its ID, don't forget to change the
+		ID the runtime looks for in the jQuery events above (ready() and cr_sizeCanvas()). -->
+		<canvas id="c2canvas" width="480" height="854">
+			<!-- This text is displayed if the visitor's browser does not support HTML5.
+			You can change it, but it is a good idea to link to a description of a browser
+			and provide some links to download some popular HTML5-compatible browsers. -->
+			<h1>Your browser does not appear to support HTML5.  Try upgrading your browser to the latest version.  <a href="http://game4.baifumeiba.com/www.whatbrowser.org">What is a browser?</a>
+			<br/><br/><a href="http://game4.baifumeiba.com/www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br/>
+			<a href="http://game4.baifumeiba.com/www.mozilla.com/firefox/">Mozilla Firefox</a><br/>
+			<a href="http://game4.baifumeiba.com/www.google.com/chrome/">Google Chrome</a><br/>
+			<a href="http://game4.baifumeiba.com/www.apple.com/safari/download/">Apple Safari</a><br/>
+			<a href="http://game4.baifumeiba.com/www.google.com/chromeframe">Google Chrome Frame for Internet Explorer</a><br/></h1>
+		</canvas>
+
+	</div>
+
+
+	<!-- Pages load faster with scripts at the bottom -->
+	
+	<!-- Construct 2 exported games require jQuery. -->
+	<!--<script src="http://cdn.xiaoxiangzi.com/static/ydygdy/jquery-2.0.0.min.js"></script>-->
+	<script src="js/jquery-2.0.0.min.js"></script>
+	<script src="perlin.js"></script>
+
+	
+    <!-- The runtime script.  You can rename it, but don't forget to rename the reference here as well.
+    This file will have been minified and obfuscated if you enabled "Minify script" during export. -->
+	<!--<script src="http://cdn.xiaoxiangzi.com/static/ydygdy/c2runtime.js"></script>-->
+	<script src="js/c2runtime.js"></script>
+ 	<!--<script src="cnzz_tongji.js"></script>-->
+	<script src="sys.min.js"></script>
+    <script>
+
+    	//_czc.push(["_trackEvent","ابد اللعبه"," طير الكورة بكل قوتك ","","",""]);
+    		(function(){play68_init();})();
+var shareUrl = guide_href;
+        	Play68.set_share_url(shareUrl);
+
+    	function is_weixn(){  
+            return false;  
+        } 
+
+		function guanzhu(){
+    		location.href = guide_href;
+        // if(is_weixn()){
+        //         _czc.push(["_trackEvent","","","","",""]);
+        //         setTimeout(function(){
+        //             parent.location.href = "/mp.weixin.qq.com/s?__biz=MzA4MjAwNjQ2Mw==&mid=203181738&idx=1&sn=cf032b8b1e0ac420f65168aac39ecce0#wechat_redirect";
+        //         },500);
+                
+        //      }else{
+        //         _czc.push(["_trackEvent","","","goHome","",""]);
+        //         setTimeout(function(){
+        //             Play68.goHome();
+        //         },500);            
+        //      } 
+     //    _czc.push(["_trackEvent","","","","",""]);
+             // setTimeout(function(){
+            //        parent.location.href = "/game/more.html";
+             //   },500);
+		}
+
+		// Size the canvas to fill the browser viewport.
+		jQuery(window).resize(function() {
+			cr_sizeCanvas(jQuery(window).width(), jQuery(window).height() - 107);
+		});
+		
+		// Start the Construct 2 project running on window load.
+		jQuery(document).ready(function ()
+		{
+			// Create new runtime using the c2canvas
+			cr_createRuntime("c2canvas");
+			cr_sizeCanvas(jQuery(window).width(), jQuery(window).height() - 107);
+		});
+		
+		// Pause and resume on page becoming visible/invisible
+		function onVisibilityChanged() {
+			if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
+				cr_setSuspended(true);
+			else
+				cr_setSuspended(false);
+		};
+		
+		document.addEventListener("visibilitychange", onVisibilityChanged, false);
+		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
+		
+    </script>
+	<div id="cover"></div>
+<div id="guide"><img src="guide.png"></div>  
+<!--<script type="text/javascript">-->
+    <!--/*20:3  2015-10-08*/-->
+    <!--var cpro_id = "u2527841";-->
+<!--</script>-->
+
+<!-- <script src="http://cpro.baidustatic.com/cpro/ui/cm.js" type="text/javascript"></script>
+<div style="display:none">
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256016171'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D1256016171' type='text/javascript'%3E%3C/script%3E"));</script>
+</div> -->
+	<div id="ad">
+	</div>
+	<div id="gotoPlay">
+		<style>
+			.adsize {
+				width: 100%;
+				height: 60px;
+			}
+
+			@media(min-width: 500px) {
+				.adsize {
+					width: 100%;
+					height: 60px;
+				}
+			}
+
+			@media(min-width: 800px) {
+				.adsize {
+					width: 100%;
+					height: 80px;
+				}
+			}
+		</style>
+		<script async src="../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+		<!--  -->
+		<ins class="adsbygoogle adsize"
+			 style="display:inline-block"
+			 data-ad-client="ca-pub-3599398066322967"
+			 data-ad-slot="9457545598"
+		></ins>
+		<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+
+	</div>
+	<script type="text/javascript" src="../../../game.baifumeiba.com/login/ad/adex.js"></script>
+	<script>adStart();</script>
+</body> 
+
+<!-- Mirrored from game4.baifumeiba.com/minigame/ydygdy/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 10:12:04 GMT -->
+</html> 
